@@ -1,0 +1,41 @@
+site_name: Blog Management Application - Functional Documentation
+site_description: Functional Specification for Blog Management Application
+
+theme:
+  name: material
+  features:
+    - navigation.expand
+    - navigation.instant
+    - toc.integrate
+    - content.code.copy  
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+
+nav:
+  - Home: index.md
+  - 1. Introduction: 01-introduction.md
+  - 2. Scope & Objectives: 02-scope_objective.md
+  - 3. User Profiles: 03-user_profiles.md
+  - 4. Assumptions & Constraints: 04-assumptions_constraints.md
+  - 5. Functional Requirements: 05-functional_requirements.md
+  - 6. Non-Functional Requirements: 06-non-functional_requirements.md
+  - 7. Data & Information: 07-data_requirements.md
+  - 8. UI & UX: 08-ui_ux.md
+  - 9. External Interfaces: 09-external_interfaces.md
+  - 10. Glossary: 10-glossary.md
+  - 11. Data Flow Diagram: 11-data_flow_diagram.md
