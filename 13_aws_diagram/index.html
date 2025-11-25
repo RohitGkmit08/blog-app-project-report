@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../08-ui_ux/">
+        <link rel="prev" href="../12-er_diagram/">
       
       
-        <link rel="next" href="../10-glossary/">
+        <link rel="next" href="../15-unit_test_case/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>9. External Interfaces - DailyPost</title>
+        <title>13. AWS Specific Diagram - DailyPost</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-external-interfaces" class="md-skip">
+        <a href="#aws-deployment-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. External Interfaces
+              13. AWS Specific Diagram
             
           </span>
         </div>
@@ -438,37 +438,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    9. External Interfaces
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09-external_interfaces/" class="md-nav__link">
         
   
   
@@ -484,37 +457,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -604,10 +546,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../13_aws_diagram/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -623,6 +574,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -725,39 +677,25 @@
 
 
 
-<h1 id="10-external-interfaces">10. External Interfaces</h1>
-<p>This section describes the external systems and interfaces that interact with the Blogging Application.</p>
-<hr />
-<table>
-<thead>
-<tr>
-<th>Interface</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SMTP Email Server</strong></td>
-<td>Provides email delivery functionality. The backend uses NodeMailer (an internal library) to connect and send automated blog update emails via an external SMTP service such as Gmail, Outlook, or a custom domain mail server.</td>
-</tr>
-<tr>
-<td><strong>Web Browser</strong></td>
-<td>Acts as the primary user interface, allowing users to read blogs, post comments, and manage subscriptions.</td>
-</tr>
-<tr>
-<td><strong>Hosting Environment</strong></td>
-<td>Provides cloud-based hosting for the backend (AWS EC2) and frontend (Vercel), ensuring continuous uptime and public accessibility.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="summary">Summary</h2>
+<h1 id="aws-deployment-architecture">AWS Deployment Architecture</h1>
+<p><img alt="AWS Deployment Architecture" src="../ASA.png" /></p>
+<p><strong>Explanation</strong></p>
+<p>This diagram represents the <strong>deployment architecture</strong> of the <em>Blog Management Application</em> on AWS:</p>
 <ul>
-<li><strong>NodeMailer</strong> is an internal tool integrated into the Express backend.  </li>
-<li><strong>SMTP Server</strong> (e.g., Gmail, Outlook, or custom mail host) is the actual <strong>external interface</strong> responsible for sending emails.  </li>
-<li>The frontend and backend communicate through standard <strong>HTTP/HTTPS interfaces</strong> hosted in a cloud environment.</li>
+<li><strong>Users</strong> access the application through a browser, connecting to the <strong>frontend</strong> hosted on <strong>Vercel</strong>  </li>
+<li>The <strong>frontend</strong> communicates with the <strong>backend API</strong>, which runs on an <strong>Amazon EC2 instance</strong> inside an <strong>AWS Virtual Private Cloud (VPC)</strong>  </li>
+<li>The <strong>VPC</strong> contains a <strong>public subnet</strong>, allowing secure and limited external access to the backend  </li>
+<li>The <strong>backend</strong> is responsible for handling business logic, authentication, and API endpoints  </li>
+<li>It connects to <strong>MongoDB Atlas</strong>, a managed cloud database service, for storing and retrieving data such as users, blogs, categories, and comments  </li>
+<li><strong>Atlas</strong> handles database scalability and backups, while <strong>AWS</strong> manages compute resources  </li>
 </ul>
-<hr />
+<p>This setup ensures:</p>
+<ul>
+<li><strong>Scalability</strong> — components can scale independently (frontend via Vercel, backend via EC2)  </li>
+<li><strong>Security</strong> — VPC and subnets isolate critical services  </li>
+<li><strong>Reliability</strong> — managed services reduce downtime and maintenance overhead  </li>
+<li><strong>Separation of Concerns</strong> — clear division between presentation, logic, and data layers</li>
+</ul>
 
 
 
