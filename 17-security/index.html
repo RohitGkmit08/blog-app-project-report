@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../02-scope_objective/">
+        <link rel="prev" href="../16-CI-CD_work_flow/">
       
-      
-        <link rel="next" href="../04-assumptions_constraints/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>3. User Profiles - DailyPost</title>
+        <title>17. Security-scans - DailyPost</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-target-audience-user-profiles" class="md-skip">
+        <a href="#17-security-scans" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. User Profiles
+              17. Security-scans
             
           </span>
         </div>
@@ -276,37 +274,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3. User Profiles
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../03-user_profiles/" class="md-nav__link">
         
   
   
@@ -322,48 +293,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#user-roles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Roles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Responsibilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -723,10 +652,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../17-security/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Security-scans
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -742,6 +698,220 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-security-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Security Threats?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What are Security Threats?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cross-site-scripting-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cross-Site Scripting (XSS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sqlnosql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SQL/NoSQL Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cross-site-request-forgery-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cross-Site Request Forgery (CSRF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-clickjacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clickjacking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-security-header-missing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Security Header Missing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-dependency-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Dependency Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Authentication Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-information-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Information Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-scanning-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Scanning Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Scanning Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-owasp-zap-zed-attack-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. OWASP ZAP (Zed Attack Proxy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-aikido-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Aikido Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-scan-results-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Scan Results Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Scan Results Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#owasp-zap-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP ZAP Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aikido-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aikido Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -763,34 +933,124 @@
 
 
 
-<h1 id="3-target-audience-user-profiles">3. Target Audience &amp; User Profiles</h1>
-<h2 id="user-roles">User Roles</h2>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>Description</th>
-<th>Usage Frequency</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Admin</strong></td>
-<td>Manages blogs, comments, and subscriptions.</td>
-<td>Frequent</td>
-</tr>
-<tr>
-<td><strong>User (Reader)</strong></td>
-<td>Reads blogs, comments, and can subscribe for updates.</td>
-<td>Frequent</td>
-</tr>
-</tbody>
-</table>
-<h2 id="responsibilities">Responsibilities</h2>
+<h1 id="17-security-scans">17. Security Scans</h1>
+<p>This document outlines the security threats, scanning tools, and remediation strategies for the <strong>DailyPost</strong> application.</p>
+<hr />
+<h2 id="what-are-security-threats">What are Security Threats?</h2>
+<p>Security threats are potential vulnerabilities and risks that can compromise the security of the DailyPost application. Common threats include:</p>
+<h3 id="1-cross-site-scripting-xss">1. Cross-Site Scripting (XSS)</h3>
 <ul>
-<li><strong>Admin:</strong> Create and maintain blog content, monitor comments, and view subscription analytics.  </li>
-<li><strong>User:</strong> Read blogs, post comments, and opt in/out of blog update emails.  </li>
+<li><strong>Description:</strong> Attackers inject malicious scripts into web pages</li>
+<li><strong>Impact:</strong> Steal user data, session hijacking, defacement</li>
+<li><strong>Prevention:</strong> Input validation, output encoding, Content Security Policy</li>
 </ul>
+<h3 id="2-sqlnosql-injection">2. SQL/NoSQL Injection</h3>
+<ul>
+<li><strong>Description:</strong> Attackers inject malicious queries into database operations</li>
+<li><strong>Impact:</strong> Unauthorized data access, data manipulation, data deletion</li>
+<li><strong>Prevention:</strong> Parameterized queries, input validation, ORM usage</li>
+</ul>
+<h3 id="3-cross-site-request-forgery-csrf">3. Cross-Site Request Forgery (CSRF)</h3>
+<ul>
+<li><strong>Description:</strong> Attackers trick users into performing unwanted actions</li>
+<li><strong>Impact:</strong> Unauthorized actions on behalf of users</li>
+<li><strong>Prevention:</strong> CSRF tokens, SameSite cookies, origin validation</li>
+</ul>
+<h3 id="4-clickjacking">4. Clickjacking</h3>
+<ul>
+<li><strong>Description:</strong> Attackers overlay malicious content over legitimate pages</li>
+<li><strong>Impact:</strong> Users tricked into clicking hidden elements</li>
+<li><strong>Prevention:</strong> X-Frame-Options header, CSP frame-ancestors</li>
+</ul>
+<h3 id="5-security-header-missing">5. Security Header Missing</h3>
+<ul>
+<li><strong>Description:</strong> Missing security headers expose application to various attacks</li>
+<li><strong>Impact:</strong> MIME sniffing, protocol downgrade, information disclosure</li>
+<li><strong>Prevention:</strong> Implement security headers (helmet.js)</li>
+</ul>
+<h3 id="6-dependency-vulnerabilities">6. Dependency Vulnerabilities</h3>
+<ul>
+<li><strong>Description:</strong> Third-party packages with known security vulnerabilities</li>
+<li><strong>Impact:</strong> Exploitation of vulnerable dependencies</li>
+<li><strong>Prevention:</strong> Regular dependency updates, vulnerability scanning</li>
+</ul>
+<h3 id="7-authentication-bypass">7. Authentication Bypass</h3>
+<ul>
+<li><strong>Description:</strong> Weak authentication mechanisms allow unauthorized access</li>
+<li><strong>Impact:</strong> Unauthorized access to admin features</li>
+<li><strong>Prevention:</strong> Strong passwords, secure session management, MFA</li>
+</ul>
+<h3 id="8-information-disclosure">8. Information Disclosure</h3>
+<ul>
+<li><strong>Description:</strong> Sensitive information exposed in errors, comments, or headers</li>
+<li><strong>Impact:</strong> Attackers gain information about system architecture</li>
+<li><strong>Prevention:</strong> Secure error handling, remove sensitive comments</li>
+</ul>
+<hr />
+<h2 id="security-scanning-tools">Security Scanning Tools</h2>
+<h3 id="1-owasp-zap-zed-attack-proxy">1. OWASP ZAP (Zed Attack Proxy)</h3>
+<p><img alt="ZAP Security Scan" src="../zap-scan-interface.png" /></p>
+<p><strong>What it does:</strong>
+- Scans web applications for security vulnerabilities
+- Tests API endpoints for security issues
+- Identifies misconfigurations and missing security headers
+- Provides detailed vulnerability reports</p>
+<p><strong>How it works:</strong>
+1. Crawls the application to discover pages and endpoints
+2. Performs active security testing
+3. Identifies vulnerabilities and categorizes them by risk
+4. Generates reports with remediation guidance</p>
+<p><strong>What it finds:</strong>
+- Missing security headers (X-Frame-Options, CSP, HSTS)
+- Content Security Policy issues
+- Cross-origin resource sharing (CORS) misconfigurations
+- Information disclosure vulnerabilities
+- Cache configuration issues</p>
+<hr />
+<h3 id="2-aikido-security">2. Aikido Security</h3>
+<p><img alt="Aikido Scan" src="../aikido-dashboard.png" /></p>
+<p><strong>What it does:</strong>
+- Continuously monitors codebase for security issues
+- Scans dependencies for known vulnerabilities
+- Identifies code-level security problems
+- Provides fix time estimates and remediation steps</p>
+<p><strong>How it works:</strong>
+1. Monitors code changes in real-time
+2. Scans npm dependencies for known CVEs
+3. Analyzes code for security anti-patterns
+4. Alerts on new security issues</p>
+<p><strong>What it finds:</strong>
+- Vulnerable dependencies (e.g., js-yaml prototype pollution)
+- Missing security headers in Express.js
+- Code-level security issues
+- Infrastructure security problems</p>
+<hr />
+<h2 id="security-scan-results-summary">Security Scan Results Summary</h2>
+<h3 id="owasp-zap-findings">OWASP ZAP Findings</h3>
+<ul>
+<li><strong>CSP Issues:</strong> 4 (Medium-Low risk)</li>
+<li><strong>Security Headers:</strong> 3 (Medium-Low risk)</li>
+<li><strong>CORS Issues:</strong> 2 (Medium risk)</li>
+<li><strong>Information Disclosure:</strong> 2 (Low risk)</li>
+<li><strong>Cache Issues:</strong> 4 (Low-Informational)</li>
+</ul>
+<h3 id="aikido-findings">Aikido Findings</h3>
+<ul>
+<li><strong>High Severity:</strong> 1 (Missing security headers)</li>
+<li><strong>Medium Severity:</strong> 1 (js-yaml vulnerability)</li>
+</ul>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Scan Regularly:</strong> Run security scans before deployments and weekly</li>
+<li><strong>Fix High Priority First:</strong> Address critical vulnerabilities immediately</li>
+<li><strong>Keep Dependencies Updated:</strong> Regularly update npm packages</li>
+<li><strong>Use Security Headers:</strong> Always implement security headers (helmet.js)</li>
+<li><strong>Validate Input:</strong> Validate and sanitize all user inputs</li>
+<li><strong>Secure Authentication:</strong> Use strong passwords and secure sessions</li>
+<li><strong>Monitor Continuously:</strong> Use tools like Aikido for continuous monitoring</li>
+<li><strong>Document Fixes:</strong> Keep track of security fixes and improvements</li>
+</ol>
 <hr />
 
 
