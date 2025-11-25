@@ -91,7 +91,7 @@ Upon successful execution of all steps, the deployment is marked as complete, an
 
 ## Workflow Visualization
 
-![CI/CD Workflow Diagram](../workflow-diagram.png)
+![CI/CD Workflow Diagram](workflow-diagram.png)
 
 *The diagram above illustrates the complete deployment workflow from code push to successful deployment.*
 

@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../10-glossary/" rel="prev"/>
-<link href="../12-er_diagram/" rel="next"/>
+<link href="../11-data_flow_diagram/" rel="prev"/>
+<link href="../13_aws_diagram/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>11. Data Flow Diagram - DailyPost</title>
+<title>12. ER Diagram - DailyPost</title>
 <link href="../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -21,9 +21,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#data-flow-diagram">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -45,7 +42,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              11. Data Flow Diagram
+              12. ER Diagram
             
           </span>
 </div>
@@ -230,67 +227,21 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-data_flow_diagram/">
+<span class="md-ellipsis">
+    
+  
+    11. Data Flow Diagram
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    11. Data Flow Diagram
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
 <a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    
-  
-    11. Data Flow Diagram
-  
-
-    
-  </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#level-0-dfd-context-diagram">
-<span class="md-ellipsis">
-      
-        Level-0 DFD — Context Diagram
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#level-1-dfd-system-decomposition">
-<span class="md-ellipsis">
-      
-        Level-1 DFD - System Decomposition
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authentication-and-authorization">
-<span class="md-ellipsis">
-      
-        Authentication and Authorization
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../12-er_diagram/">
 <span class="md-ellipsis">
     
   
@@ -356,124 +307,58 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="data-flow-diagram">Data Flow Diagram</h1>
-<p>This document presents the three levels of Data Flow Diagrams (DFD) for the <strong>Blog Management Application</strong>, showing how data moves between users, the frontend, backend, and supporting services.</p>
-<hr/>
-<h2 id="level-0-dfd-context-diagram">Level-0 DFD — Context Diagram</h2>
-<p><strong>Explanation:</strong>
-The Level-0 DFD (Context Diagram) shows the entire Blog Management System as a single process and how it exchanges data with external entities (User and Admin). It also shows the single logical Database used by the system.</p>
-<pre class="mermaid"><code>graph TD
+<h1>12. ER Diagram</h1>
+<pre class="mermaid"><code>erDiagram
+    BLOG ||--o{ COMMENT : "has"
+    SUBSCRIBER ||--o{ COMMENT : "creates"
+    USER ||..o{ SUBSCRIBER : "must subscribe first"
 
-%% ===============================
-%% Level 0 DFD - Blogging Application
-%% ===============================
+    BLOG {
+        ObjectId _id PK
+        String title
+        String subTitle
+        String description
+        String slug UK
+        String category
+        String image
+        String authorName
+        Boolean isPublished
+        Date publishedAt
+        Boolean wasNotified
+        Date createdAt
+        Date updatedAt
+        Date deletedAt
+    }
 
-%% External Entities
-U[User]
-A[Admin]
+    USER {
+        ObjectId _id PK
+        String name
+        String email UK
+        String password
+        Boolean emailPreference
+        Date createdAt
+        Date updatedAt
+        Date deletedAt
+    }
 
-%% Process
-P1[(Blog Management System)]
+    COMMENT {
+        ObjectId _id PK
+        ObjectId blogId FK
+        ObjectId subscriberId FK
+        String comment
+        String status
+        Date createdAt
+        Date updatedAt
+        Date deletedAt
+    }
 
-%% Data Store
-D1[(Database)]
-
-%% Data Flow
-U --&gt;|Registers / Logs in / Views Blogs| P1
-A --&gt;|Manages Blogs / Categories / Users| P1
-P1 --&gt;|Stores / Retrieves Data| D1
-D1 --&gt;|Provides Stored Data| P1
-P1 --&gt;|Displays Blogs / Messages / Results| U
-P1 --&gt;|Dashboard / Reports| A
-</code></pre>
-<h2 id="level-1-dfd-system-decomposition">Level-1 DFD - System Decomposition</h2>
-<p>This document presents the three levels of Data Flow Diagrams (DFD) for the <strong>Blog Management Application</strong>, showing how data moves between users, the frontend, backend, and supporting services.</p>
-<p><strong>Explanation:</strong>
-The Level-1 DFD decomposes the Blog Management System into major subsystems (User Authentication, Blog Management, Category Management, Comment System) and shows their interactions with the data stores (Users, Blogs, Categories, Comments) and with external actors (User and Admin).</p>
-<pre class="mermaid"><code>graph LR
-
-U["User"]
-A["Admin"]
-
-subgraph Blog_Management_System["Blog Management System"]
-  direction TB
-  P1A["User Authentication"]
-  P1B["Blog Management"]
-  P1C["Category Management"]
-  P1D["Comment System"]
-end
-
-subgraph Data_Stores["Data Storage"]
-  direction TB
-  D1["Users Database"]
-  D2["Blogs Database"]
-  D3["Categories Database"]
-  D4["Comments Database"]
-end
-
-U --&gt;|"Register or Login"| P1A
-P1A --&gt;|"Verify Credentials and Hash Password"| D1
-D1 --&gt;|"User Info"| P1A
-P1A --&gt;|"Access Token or Auth Status"| U
-
-U --&gt;|"Create, View, or Edit Blogs"| P1B
-P1B --&gt;|"Store or Retrieve Blogs"| D2
-D2 --&gt;|"Blog Data"| P1B
-P1B --&gt;|"Display Blogs"| U
-
-P1A --&gt;|"Authenticated Access"| P1B
-
-A --&gt;|"Add, Edit, or Delete Categories"| P1C
-P1C --&gt;|"Update Categories"| D3
-D3 --&gt;|"Category Data"| P1C
-P1C --&gt;|"Provide Category List"| P1B
-P1B --&gt;|"Selected Category Reference"| P1C
-
-U --&gt;|"Post or View Comments"| P1D
-P1D --&gt;|"Read or Write Comments"| D4
-D4 --&gt;|"Comments Data"| P1D
-P1D --&gt;|"Display Comments"| U
-
-P1B --&gt;|"Provide Blog Context"| P1D
-P1D --&gt;|"Comments for Blog"| P1B
-
-A --&gt;|"Manage Users and Blogs"| P1A
-A --&gt;|"Moderate Content"| P1B
-A --&gt;|"Monitor Comments"| P1D</code></pre>
-<h2 id="authentication-and-authorization">Authentication and Authorization</h2>
-<p><strong>Explanation</strong></p>
-<p>This document presents the authentication and authorization flow for the <strong>JWT-based Application</strong>, showing how user registration, login, token verification, and permission checks are handled between users, the frontend, backend, and supporting services.</p>
-<pre class="mermaid"><code>flowchart TD
-    subgraph A [User Registration]
-        A1[User submits registration data&lt;br/&gt;name, email, password] --&gt; A2[Hash password for security]
-        A2 --&gt; A3[Save record in UsersDB]
-        A3 --&gt; A4[Return success message]
-    end
-
-    subgraph B [User Login]
-        B1[User enters credentials] --&gt; B2{Validate credentials&lt;br/&gt;against UsersDB}
-        B2 -- Valid --&gt; B3[Create &amp; Sign JWT&lt;br/&gt;using Secret Key]
-        B3 --&gt; B4[Return token to user]
-        B2 -- Invalid --&gt; B5[Return error message]
-    end
-
-    subgraph C [Token Verification]
-        C1[API Request with JWT&lt;br/&gt;in header] --&gt; C2{Verify token signature&lt;br/&gt;using JWT Secret}
-        C2 -- Valid --&gt; C3[Decode token to extract&lt;br/&gt;user details &amp; role]
-        C2 -- Invalid --&gt; C4[Return authentication error]
-    end
-
-    subgraph D [Authorization Process]
-        C3 --&gt; D1[Check user role against&lt;br/&gt;Access Control List]
-        D1 --&gt; D2{Authorize: Compare requested&lt;br/&gt;action with ACL rules}
-        D2 -- Permissions Match --&gt; D3[Access Granted]
-        D2 -- Insufficient Rights --&gt; D4[Access Denied]
-    end
-
-    A --&gt; B
-    B --&gt; C
-    C --&gt; D
-</code></pre>
+    SUBSCRIBER {
+        ObjectId _id PK
+        ObjectId userId FK
+        String email UK
+        Date createdAt
+        Date deletedAt
+    }</code></pre>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

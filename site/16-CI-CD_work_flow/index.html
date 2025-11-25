@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../08-ui_ux/">
+        <link rel="prev" href="../15-unit_test_case/">
       
-      
-        <link rel="next" href="../10-glossary/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>9. External Interfaces - DailyPost</title>
+        <title>16. CI-CD workflow - DailyPost</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-external-interfaces" class="md-skip">
+        <a href="#cicd-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. External Interfaces
+              16. CI-CD workflow
             
           </span>
         </div>
@@ -438,37 +436,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    9. External Interfaces
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09-external_interfaces/" class="md-nav__link">
         
   
   
@@ -484,37 +455,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -685,10 +625,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../16-CI-CD_work_flow/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. CI-CD workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -704,6 +671,208 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is CI/CD?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-workflow-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Workflow Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Workflow Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-trigger-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Trigger Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-workflow-initiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Workflow Initiation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-job-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Job Environment Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-step-1-checkout-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Step 1: Checkout Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-step-2-set-up-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Step 2: Set up Node.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-step-3-ssh-into-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Step 3: SSH into EC2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-step-4-run-deployment-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Step 4: Run Deployment Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-deployment-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Deployment Complete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-run-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Run History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -725,38 +894,105 @@
 
 
 
-<h1 id="10-external-interfaces">10. External Interfaces</h1>
-<p>This section describes the external systems and interfaces that interact with the Blogging Application.</p>
+<h1 id="cicd-workflow">CI/CD Workflow</h1>
+<p>This document describes the <strong>Continuous Integration and Continuous Deployment (CI/CD)</strong> pipeline implemented for the <strong>DailyPost</strong> application, specifically for backend deployment to AWS EC2.</p>
 <hr />
-<table>
-<thead>
-<tr>
-<th>Interface</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SMTP Email Server</strong></td>
-<td>Provides email delivery functionality. The backend uses NodeMailer (an internal library) to connect and send automated blog update emails via an external SMTP service such as Gmail, Outlook, or a custom domain mail server.</td>
-</tr>
-<tr>
-<td><strong>Web Browser</strong></td>
-<td>Acts as the primary user interface, allowing users to read blogs, post comments, and manage subscriptions.</td>
-</tr>
-<tr>
-<td><strong>Hosting Environment</strong></td>
-<td>Provides cloud-based hosting for the backend (AWS EC2) and frontend (Vercel), ensuring continuous uptime and public accessibility.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="what-is-cicd">What is CI/CD?</h2>
+<p><strong>Continuous Integration (CI)</strong> and <strong>Continuous Deployment (CD)</strong> are DevOps practices that automate the process of building, testing, and deploying applications. </p>
+<ul>
+<li><strong>CI</strong> ensures that code changes are automatically tested and integrated into the main codebase, catching issues early in the development cycle.</li>
+<li><strong>CD</strong> automates the deployment process, allowing code changes to be automatically deployed to production environments after passing all tests and checks.</li>
+</ul>
+<p>Together, CI/CD reduces manual errors, speeds up delivery, and ensures consistent deployments across environments.</p>
+<hr />
+<h2 id="workflow-overview">Workflow Overview</h2>
+<p>The backend deployment workflow is triggered automatically when code is pushed to the <code>backend-final-update</code> branch. The entire process is orchestrated using <strong>GitHub Actions</strong>, a CI/CD platform integrated with GitHub repositories.</p>
+<hr />
+<h2 id="deployment-workflow-steps">Deployment Workflow Steps</h2>
+<h3 id="1-trigger-event">1. Trigger Event</h3>
+<p><strong>Event:</strong> Push to <code>backend-final-update</code> branch</p>
+<p>The workflow is automatically initiated when a developer pushes code changes to the <code>backend-final-update</code> branch in the repository.</p>
+<hr />
+<h3 id="2-workflow-initiation">2. Workflow Initiation</h3>
+<p><strong>Action:</strong> Start Workflow: Deploy Backend to EC2</p>
+<p>GitHub Actions detects the push event and starts the deployment workflow.</p>
+<hr />
+<h3 id="3-job-environment-setup">3. Job Environment Setup</h3>
+<p><strong>Environment:</strong> <code>ubuntu-latest</code></p>
+<p>The deployment job runs on a GitHub-hosted runner using the latest Ubuntu environment, providing a clean, consistent execution environment.</p>
+<hr />
+<h3 id="4-step-1-checkout-repository">4. Step 1: Checkout Repository</h3>
+<p><strong>Action:</strong> <code>actions/checkout@v3</code></p>
+<p>This step retrieves the source code from the repository, making it available for subsequent steps in the workflow.</p>
+<hr />
+<h3 id="5-step-2-set-up-nodejs">5. Step 2: Set up Node.js</h3>
+<p><strong>Action:</strong> <code>actions/setup-node@v3</code><br />
+<strong>Node Version:</strong> 20</p>
+<p>Configures the environment with Node.js version 20, ensuring the correct runtime environment for the backend application.</p>
+<hr />
+<h3 id="6-step-3-ssh-into-ec2">6. Step 3: SSH into EC2</h3>
+<p><strong>Action:</strong> <code>appleboy/ssh-action@v1.0.3</code></p>
+<p>Establishes a secure SSH connection to the Amazon EC2 instance where the backend application is hosted. This step uses SSH keys configured as GitHub secrets for secure authentication.</p>
+<hr />
+<h3 id="7-step-4-run-deployment-script">7. Step 4: Run Deployment Script</h3>
+<p>Once connected to the EC2 instance, the following commands are executed:</p>
+<p>cd /home/ubuntu/backend
+git reset --hard
+git pull origin backend-final-update
+npm install --omit=dev
+pm2 restart backend OR start server.js<strong>Command Breakdown:</strong>
+- <code>cd /home/ubuntu/backend</code>: Navigates to the backend application directory
+- <code>git reset --hard</code>: Discards any local changes that might conflict with the deployment
+- <code>git pull origin backend-final-update</code>: Pulls the latest code from the repository
+- <code>npm install --omit=dev</code>: Installs production dependencies only (excludes development dependencies)
+- <code>pm2 restart backend</code>: Restarts the application using PM2 process manager (or starts the server if not running)</p>
+<hr />
+<h3 id="8-deployment-complete">8. Deployment Complete</h3>
+<p>Upon successful execution of all steps, the deployment is marked as complete, and the application is live with the latest changes.</p>
+<hr />
+<h2 id="workflow-visualization">Workflow Visualization</h2>
+<p><img alt="CI/CD Workflow Diagram" src="../workflow-diagram.png" /></p>
+<p><em>The diagram above illustrates the complete deployment workflow from code push to successful deployment.</em></p>
+<hr />
+<h2 id="workflow-run-history">Workflow Run History</h2>
+<p>The GitHub Actions interface provides visibility into all workflow runs, showing:</p>
+<ul>
+<li><strong>Status:</strong> Success (✓) or failure indicators</li>
+<li><strong>Branch:</strong> The branch that triggered the deployment</li>
+<li><strong>Timestamp:</strong> When the deployment occurred</li>
+<li><strong>Duration:</strong> Time taken to complete the deployment (typically 16-22 seconds)</li>
+<li><strong>Commit Information:</strong> Details about the commit that triggered the deployment</li>
+</ul>
+<p><img alt="Workflow Runs" src="../workflow-runs.png" /></p>
+<p><em>Example workflow run history showing successful deployments to the backend-final-update branch.</em></p>
+<hr />
+<h2 id="key-benefits">Key Benefits</h2>
+<ol>
+<li><strong>Automated Deployments:</strong> Eliminates manual deployment steps and reduces human error</li>
+<li><strong>Fast Deployment:</strong> Complete deployment cycle in under 30 seconds</li>
+<li><strong>Consistency:</strong> Every deployment follows the same process, ensuring reliability</li>
+<li><strong>Visibility:</strong> Clear history and status of all deployments</li>
+<li><strong>Rollback Capability:</strong> Easy to identify and revert to previous working versions if needed</li>
+</ol>
+<hr />
+<h2 id="security-considerations">Security Considerations</h2>
+<ul>
+<li>SSH keys are stored as GitHub secrets and never exposed in logs</li>
+<li>Only authorized branches trigger deployments</li>
+<li>Production dependencies are installed, reducing attack surface</li>
+<li>PM2 ensures process stability and automatic restarts</li>
+</ul>
 <hr />
 <h2 id="summary">Summary</h2>
+<p>The CI/CD pipeline for <strong>DailyPost</strong> backend ensures:</p>
 <ul>
-<li><strong>NodeMailer</strong> is an internal tool integrated into the Express backend.  </li>
-<li><strong>SMTP Server</strong> (e.g., Gmail, Outlook, or custom mail host) is the actual <strong>external interface</strong> responsible for sending emails.  </li>
-<li>The frontend and backend communicate through standard <strong>HTTP/HTTPS interfaces</strong> hosted in a cloud environment.</li>
+<li><strong>Automated</strong> deployment process from code push to production</li>
+<li><strong>Fast</strong> deployment cycles (typically 16-22 seconds)</li>
+<li><strong>Reliable</strong> and consistent deployments</li>
+<li><strong>Secure</strong> authentication and execution</li>
+<li><strong>Transparent</strong> workflow history and monitoring</li>
 </ul>
+<p>This setup enables rapid iteration and deployment while maintaining high standards of reliability and security.</p>
 <hr />
 
 

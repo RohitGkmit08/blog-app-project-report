@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../08-ui_ux/">
+        <link rel="prev" href="../13_aws_diagram/">
       
       
-        <link rel="next" href="../10-glossary/">
+        <link rel="next" href="../16-CI-CD_work_flow/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>9. External Interfaces - DailyPost</title>
+        <title>15. Unit test cases - DailyPost</title>
       
     
     
@@ -63,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#10-external-interfaces" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. External Interfaces
+              15. Unit test cases
             
           </span>
         </div>
@@ -438,37 +433,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    9. External Interfaces
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09-external_interfaces/" class="md-nav__link">
         
   
   
@@ -484,37 +452,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -658,10 +595,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../15-unit_test_case/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -677,6 +621,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -725,39 +670,203 @@
 
 
 
-<h1 id="10-external-interfaces">10. External Interfaces</h1>
-<p>This section describes the external systems and interfaces that interact with the Blogging Application.</p>
-<hr />
+  <h1>15. Unit test cases</h1>
+
 <table>
 <thead>
 <tr>
-<th>Interface</th>
-<th>Description</th>
+<th>TC ID</th>
+<th>Module</th>
+<th>Scenario</th>
+<th>Inputs</th>
+<th>Expected Output</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>SMTP Email Server</strong></td>
-<td>Provides email delivery functionality. The backend uses NodeMailer (an internal library) to connect and send automated blog update emails via an external SMTP service such as Gmail, Outlook, or a custom domain mail server.</td>
+<td><strong>Authentication Module</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Web Browser</strong></td>
-<td>Acts as the primary user interface, allowing users to read blogs, post comments, and manage subscriptions.</td>
+<td>TEST_CASE_01</td>
+<td>Auth Service</td>
+<td>Create user with valid data</td>
+<td>{name, email, password}</td>
+<td>Returns user object without password</td>
 </tr>
 <tr>
-<td><strong>Hosting Environment</strong></td>
-<td>Provides cloud-based hosting for the backend (AWS EC2) and frontend (Vercel), ensuring continuous uptime and public accessibility.</td>
+<td>TEST_CASE_02</td>
+<td>Auth Service</td>
+<td>Duplicate email registration</td>
+<td>Existing email</td>
+<td>Throws "Email already exists"</td>
+</tr>
+<tr>
+<td>TEST_CASE_03</td>
+<td>Auth Service</td>
+<td>Login with valid credentials</td>
+<td>{email, password}</td>
+<td>Returns user + token</td>
+</tr>
+<tr>
+<td>TEST_CASE_04</td>
+<td>Auth Service</td>
+<td>Invalid password</td>
+<td>{email, wrongPassword}</td>
+<td>Throws "Invalid credentials"</td>
+</tr>
+<tr>
+<td>TEST_CASE_05</td>
+<td>Auth Service</td>
+<td>Valid payload</td>
+<td>{userId, role}</td>
+<td>Returns JWT string</td>
+</tr>
+<tr>
+<td>TEST_CASE_06</td>
+<td>Auth Utils</td>
+<td>Compare hashed and plain</td>
+<td>(plain, hash)</td>
+<td>Returns true</td>
+</tr>
+<tr>
+<td><strong>Blog Module</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TEST_CASE_07</td>
+<td>Blog Service</td>
+<td>Create blog with valid data</td>
+<td>Title, content, userId</td>
+<td>Returns saved blog</td>
+</tr>
+<tr>
+<td>TEST_CASE_08</td>
+<td>Blog Service</td>
+<td>Missing title</td>
+<td>No title</td>
+<td>Throws validation error</td>
+</tr>
+<tr>
+<td>TEST_CASE_09</td>
+<td>Blog Service</td>
+<td>Valid blog ID</td>
+<td>Blog ID</td>
+<td>Returns blog object</td>
+</tr>
+<tr>
+<td>TEST_CASE_10</td>
+<td>Blog Service</td>
+<td>Blog not found</td>
+<td>Invalid ID</td>
+<td>Returns null / error</td>
+</tr>
+<tr>
+<td>TEST_CASE_11</td>
+<td>Blog Service</td>
+<td>Valid update</td>
+<td>ID + updates</td>
+<td>Returns updated blog</td>
+</tr>
+<tr>
+<td>TEST_CASE_12</td>
+<td>Blog Service</td>
+<td>Unauthorized user</td>
+<td>Other user</td>
+<td>Throws unauthorized error</td>
+</tr>
+<tr>
+<td>TEST_CASE_13</td>
+<td>Blog Service</td>
+<td>Valid delete</td>
+<td>Blog ID</td>
+<td>Returns deletion success</td>
+</tr>
+<tr>
+<td>TEST_CASE_14</td>
+<td>Blog Service</td>
+<td>Non-existent blog</td>
+<td>Invalid ID</td>
+<td>Throws not-found error</td>
+</tr>
+<tr>
+<td><strong>Comment Module</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TEST_CASE_15</td>
+<td>Comment Service</td>
+<td>Add valid comment</td>
+<td>{blogId, userId, text}</td>
+<td>Returns created comment</td>
+</tr>
+<tr>
+<td>TEST_CASE_16</td>
+<td>Comment Service</td>
+<td>Approve comment</td>
+<td>{commentId, action: approve}</td>
+<td>Comment updated</td>
+</tr>
+<tr>
+<td>TEST_CASE_17</td>
+<td>Comment Service</td>
+<td>Reject comment</td>
+<td>{commentId, action: reject}</td>
+<td>Comment updated</td>
+</tr>
+<tr>
+<td>TEST_CASE_18</td>
+<td>Comment Service</td>
+<td>Valid deletion</td>
+<td>commentId</td>
+<td>Returns delete success</td>
+</tr>
+<tr>
+<td><strong>User Module</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TEST_CASE_19</td>
+<td>User Service</td>
+<td>Fetch profile</td>
+<td>userId</td>
+<td>Returns user profile</td>
+</tr>
+<tr>
+<td>TEST_CASE_20</td>
+<td>User Service</td>
+<td>Valid update</td>
+<td>{userId, updates}</td>
+<td>Returns updated profile</td>
+</tr>
+<tr>
+<td>TEST_CASE_21</td>
+<td>User Validation</td>
+<td>Valid data</td>
+<td>Correct input</td>
+<td>Passes validation</td>
+</tr>
+<tr>
+<td>TEST_CASE_22</td>
+<td>User Validation</td>
+<td>Missing required fields</td>
+<td>Missing email</td>
+<td>Returns validation error</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="summary">Summary</h2>
-<ul>
-<li><strong>NodeMailer</strong> is an internal tool integrated into the Express backend.  </li>
-<li><strong>SMTP Server</strong> (e.g., Gmail, Outlook, or custom mail host) is the actual <strong>external interface</strong> responsible for sending emails.  </li>
-<li>The frontend and backend communicate through standard <strong>HTTP/HTTPS interfaces</strong> hosted in a cloud environment.</li>
-</ul>
-<hr />
 
 
 

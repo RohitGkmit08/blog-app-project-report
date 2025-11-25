@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../08-ui_ux/">
-      
-      
-        <link rel="next" href="../10-glossary/">
       
       
         
@@ -23,7 +19,7 @@
     
     
       
-        <title>9. External Interfaces - DailyPost</title>
+        <title>Tech Stack Overview - DailyPost</title>
       
     
     
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-external-interfaces" class="md-skip">
+        <a href="#tech-stack-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. External Interfaces
+              Tech Stack Overview
             
           </span>
         </div>
@@ -438,37 +434,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    9. External Interfaces
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09-external_interfaces/" class="md-nav__link">
         
   
   
@@ -484,37 +453,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -634,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../14-tech_stack" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   
@@ -725,38 +663,109 @@
 
 
 
-<h1 id="10-external-interfaces">10. External Interfaces</h1>
-<p>This section describes the external systems and interfaces that interact with the Blogging Application.</p>
+<h1 id="tech-stack-overview">Tech Stack Overview</h1>
+<p>This document outlines the complete technology stack used in the <strong>Blogging Application</strong>, covering frontend, backend, database, tools, and hosting setup.</p>
 <hr />
+<h2 id="frontend">Frontend</h2>
+<p><strong>Framework:</strong> React (Vite)<br />
+<strong>Styling:</strong> Tailwind CSS<br />
+<strong>Routing:</strong> React Router<br />
+<strong>State Management :</strong> Context API<br />
+<strong>Form Handling:</strong> React Hook Form<br />
+<strong>HTTP Client:</strong> Fetch API <br />
+<strong>Build &amp; Deployment:</strong> Vite build → Deployed on <strong>Vercel</strong></p>
+<p><strong>Key Features</strong>
+- Fast development and build via Vite
+- Responsive UI with Tailwind CSS
+- Reusable component-based architecture
+- Easy deployment pipeline with GitHub → Vercel integration</p>
+<hr />
+<h2 id="backend">Backend</h2>
+<p><strong>Runtime Environment:</strong> Node.js<br />
+<strong>Framework:</strong> Express.js<br />
+<strong>Authentication:</strong> JSON Web Tokens (JWT) + bcrypt for password hashing <br />
+<strong>Environment Management:</strong> dotenv<br />
+<strong>Error Handling:</strong> Centralized middleware<br />
+<strong>Testing Framework:</strong> Jest
+<strong>Deployment:</strong> Hosted on <strong>AWS EC2 instance</strong></p>
+<p><strong>Key Features</strong>
+- RESTful API design
+- Secure authentication and authorization using JWT
+- Input validation and error handling middleware
+- Environment-based configurations</p>
+<hr />
+<h2 id="database">Database</h2>
+<p><strong>Database:</strong> MongoDB<br />
+<strong>Cloud Service:</strong> MongoDB Atlas<br />
+<strong>ODM (Object Data Modeling):</strong> Mongoose<br />
+<strong>Indexes &amp; Optimization:</strong> Managed via Atlas tools  </p>
+<p><strong>Key Features</strong>
+- Cloud-hosted, secure, and scalable database
+- Schema-driven modeling with Mongoose
+- Seamless integration with Node.js backend</p>
+<hr />
+<h2 id="devops-tools">DevOps &amp; Tools</h2>
+<p><strong>Version Control:</strong> Git<br />
+<strong>Repository Management:</strong> GitHub<br />
+<strong>Branching Strategy:</strong> Feature-based branches with pull requests<br />
+<strong>API Testing:</strong> Postman <br />
+<strong>Documentation:</strong> MkDocs </p>
+<p><strong>Key Features</strong>
+- Efficient version control with Git
+- Collaboration via GitHub
+- Continuous integration and deployment setup
+- Automated documentation generation</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>This stack ensures:
+- Fast, responsive, and scalable web application
+- Clean separation of frontend and backend
+- Secure authentication and database integration
+- Cloud-native hosting and deployment
+- Easy maintainability and developer collaboration</p>
+<hr />
+<p><strong>Tech Stack Summary</strong></p>
 <table>
 <thead>
 <tr>
-<th>Interface</th>
-<th>Description</th>
+<th>Layer</th>
+<th>Technology</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>SMTP Email Server</strong></td>
-<td>Provides email delivery functionality. The backend uses NodeMailer (an internal library) to connect and send automated blog update emails via an external SMTP service such as Gmail, Outlook, or a custom domain mail server.</td>
+<td>Frontend</td>
+<td>React (Vite) + CSS</td>
+<td>UI development</td>
 </tr>
 <tr>
-<td><strong>Web Browser</strong></td>
-<td>Acts as the primary user interface, allowing users to read blogs, post comments, and manage subscriptions.</td>
+<td>Backend</td>
+<td>Node.js + Express</td>
+<td>API layer</td>
 </tr>
 <tr>
-<td><strong>Hosting Environment</strong></td>
-<td>Provides cloud-based hosting for the backend (AWS EC2) and frontend (Vercel), ensuring continuous uptime and public accessibility.</td>
+<td>Database</td>
+<td>MongoDB (Atlas)</td>
+<td>Data storage</td>
+</tr>
+<tr>
+<td>Version Control</td>
+<td>Git + GitHub</td>
+<td>Code management</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Vercel / AWS EC2</td>
+<td>Deployment</td>
+</tr>
+<tr>
+<td>Cloud Database</td>
+<td>MongoDB Atlas</td>
+<td>Managed DB hosting</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="summary">Summary</h2>
-<ul>
-<li><strong>NodeMailer</strong> is an internal tool integrated into the Express backend.  </li>
-<li><strong>SMTP Server</strong> (e.g., Gmail, Outlook, or custom mail host) is the actual <strong>external interface</strong> responsible for sending emails.  </li>
-<li>The frontend and backend communicate through standard <strong>HTTP/HTTPS interfaces</strong> hosted in a cloud environment.</li>
-</ul>
 <hr />
 
 
