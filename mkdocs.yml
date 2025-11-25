@@ -1,5 +1,5 @@
-site_name: Blog Management Application - Functional Documentation
-site_description: Functional Specification for Blog Management Application
+site_name: DailyPost
+
 
 theme:
   name: material
@@ -7,10 +7,11 @@ theme:
     - navigation.expand
     - navigation.instant
     - toc.integrate
-    - content.code.copy  
+    - content.code.copy
 
 plugins:
   - search
+  - mermaid2
 
 markdown_extensions:
   - admonition
@@ -39,3 +40,8 @@ nav:
   - 9. External Interfaces: 09-external_interfaces.md
   - 10. Glossary: 10-glossary.md
   - 11. Data Flow Diagram: 11-data_flow_diagram.md
+  - 12. ER Diagram: 12-er_diagram.md
+  - 13. AWS Specific Diagram: 13_aws_diagram.md
+  - 14. Tech stack: 14-tech_stack
+  - 15. Unit test cases: 15-unit_test_case.md
+  - 16. CI-CD workflow: 16-CI-CD_work_flow.md

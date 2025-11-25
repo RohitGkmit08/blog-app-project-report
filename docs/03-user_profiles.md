@@ -4,11 +4,11 @@
 
 | Role | Description | Usage Frequency |
 |------|--------------|-----------------|
-| **Admin** | Manages blogs, comments, and newsletters. | Frequent |
-| **User (Reader)** | Reads blogs, comments, and subscribes. | Frequent |
-| **Subscriber** | Receives newsletters and updates. | Occasional |
+| **Admin** | Manages blogs, comments, and subscriptions. | Frequent |
+| **User (Reader)** | Reads blogs, comments, and can subscribe for updates. | Frequent |
 
 ## Responsibilities
-- **Admin:** Publish and maintain blog content.
-- **User:** Read blogs, add comments, and subscribe.
-- **Subscriber:** Receive newsletters about new posts.
+- **Admin:** Create and maintain blog content, monitor comments, and view subscription analytics.  
+- **User:** Read blogs, post comments, and opt in/out of blog update emails.  
+
+---

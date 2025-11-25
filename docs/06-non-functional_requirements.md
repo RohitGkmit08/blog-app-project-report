@@ -2,7 +2,9 @@
 
 | Category | Requirement |
 |-----------|-------------|
-| **Security** | Only authenticated admins access dashboard. |
-| **Usability** | Responsive, intuitive user interface. |
-| **Scalability** | Must handle future growth in content. |
-| **Compatibility** | Support for Chrome, Firefox, Edge. |
+| **Security** | Only authenticated admins can access dashboard. |
+| **Usability** | Simple, responsive UI for users and admins. |
+| **Performance** | Emails triggered instantly after blog publication. |
+| **Compatibility** | Works across major browsers (Chrome, Firefox, Edge). |
+
+---

@@ -1,29 +1,34 @@
 # 1. Document Control & Introduction
 
 ## Project Name
-**Blog Management Application**
+**Blog Management Application* - DailyPost*
 
 ## Version History
 
-| Version | Date | Author | Description |
-|----------|------|---------|-------------|
-| 1.0 | Nov 2025 | Rohit Sinha | Initial functional documentation |
+| Version | Date | Author |
+|----------|------|---------|
+| 1.1 | Nov 2025 | Rohit Sinha |
 
 ## Authors & Reviewers
 
 | Name | Role |
 |------|------|
 | Rohit Sinha| Author |
-| Pankaj Soni |  Mentor |
+| Pankaj Soni | Mentor |
+| Aayush Sharma | Mentor |
 | GKM IT  | Reviewer |
 
+---
 
 ## Summary
-The Blog Management Application allows content creators to publish and manage blogs while readers can interact through comments and newsletter subscriptions.  
-It’s an alternative to complex CMS tools, focused on simplicity, engagement, and control.
+**DailyPost** enables administrators to publish and manage blogs while allowing users to read, comment, and receive automated blog update emails through a simple email preference system.  
+It’s designed as a streamlined alternative to complex CMS tools, focusing on simplicity, engagement, and user control.
 
 ## Objectives
-- Simplify blog publishing
-- Enable user engagement via comments
-- Build reader retention through newsletters
-- Provide a single admin dashboard for control and insights
+- Simplify blog publishing and management.  
+- Enable user interaction through comments.  
+- Build reader engagement through global email subscriptions.  
+- Provide a single admin dashboard for control and insights.
+
+---
+
